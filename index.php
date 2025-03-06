@@ -1,0 +1,1 @@
+<?php //phpcs:ignore-file Silence is golden.
