@@ -62,16 +62,25 @@ class List_Widget extends \Elementor\Widget_Base {
 			)
 		);
 
-		$repeater_list = array();
+		$current_post = \Elementor\Plugin::$instance->documents->get_current();
 
-		$current_post = get_queried_object();
-		$post_id      = $current_post ? $current_post->ID : null;
-
-		if ( ! $post_id ) {
+		if ( ! $current_post ) {
 			return;
 		}
 
-		$field_groups = acf_get_field_groups( array( 'post_id' => $post_id ) );
+		$preview_post_id = $current_post->get_settings( 'preview_id' );
+
+		if ( ! $preview_post_id ) {
+			return;
+		}
+
+		if ( ! function_exists( 'acf_get_field_groups' ) ) {
+			return;
+		}
+
+		$field_groups = acf_get_field_groups( array( 'post_id' => $preview_post_id ) );
+
+		$repeater_list = array();
 
 		foreach ( $field_groups as $group ) {
 			$field_group_id = $group['ID'];
@@ -145,6 +154,10 @@ class List_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		if ( empty( $settings['repeater_key'] ) ) {
+			return;
+		}
+
+		if ( ! function_exists( 'get_field' ) ) {
 			return;
 		}
 
