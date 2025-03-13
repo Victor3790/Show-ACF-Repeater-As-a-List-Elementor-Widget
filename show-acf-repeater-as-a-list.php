@@ -1,10 +1,11 @@
 <?php
 /**
- * Plugin Name: Show ACF Repeater as a List.
+ * Plugin Name: Show ACF Repeater as a List
  * Description: This plugin adds an elementor widget that shows a repeater as a list.
  * Author: Victor Crespo
  * Author URI: https://victorcrespo.net
  * Version: 1.0.0
+ * License: GPL2
  *
  * @package ShowRepater
  */
