@@ -26,7 +26,7 @@ class List_Widget extends \Elementor\Widget_Base {
 	 * @return string The title of the widget.
 	 */
 	public function get_title(): string {
-		return esc_html__( 'List of ACF Repeater Text Items', 'show-acf-repeater-as-a-list' );
+		return esc_html__( 'List of ACF Repeater Text Items', 'show-acf-repeater-as-a-list-for-elementor' );
 	}
 
 	/**
@@ -57,7 +57,7 @@ class List_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_repeater',
 			array(
-				'label' => esc_html__( 'Select a repeater field', 'show-acf-repeater-as-a-list' ),
+				'label' => esc_html__( 'Select a repeater field', 'show-acf-repeater-as-a-list-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -96,7 +96,7 @@ class List_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'repeater_key',
 			array(
-				'label'   => esc_html__( 'Repeater', 'show-acf-repeater-as-a-list' ),
+				'label'   => esc_html__( 'Repeater', 'show-acf-repeater-as-a-list-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => $repeater_list,
 			)
@@ -111,7 +111,7 @@ class List_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_list_style',
 			array(
-				'label' => esc_html__( 'List', 'show-acf-repeater-as-a-list' ),
+				'label' => esc_html__( 'List', 'show-acf-repeater-as-a-list-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -119,7 +119,7 @@ class List_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'text_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'show-acf-repeater-as-a-list' ),
+				'label'     => esc_html__( 'Text Color', 'show-acf-repeater-as-a-list-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .repeater-list' => 'color: {{VALUE}};',
@@ -130,7 +130,7 @@ class List_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'font_family',
 			array(
-				'label'     => esc_html__( 'Font Family', 'show-acf-repeater-as-a-list' ),
+				'label'     => esc_html__( 'Font Family', 'show-acf-repeater-as-a-list-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::FONT,
 				'default'   => "'Open Sans', sans-serif",
 				'selectors' => array(
