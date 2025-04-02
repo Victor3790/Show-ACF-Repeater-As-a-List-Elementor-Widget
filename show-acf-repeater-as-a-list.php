@@ -14,6 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-require_once __DIR__ . '/class-main.php';
+// Define the plugin file path.
+if ( ! defined( 'SHOW_ACF_REPEATER_PLUGIN_FILE' ) ) {
+	define( 'SHOW_ACF_REPEATER_PLUGIN_FILE', __FILE__ );
+}
+
+require_once 'includes/class-main.php';
 
 $show_repeater = ShowRepater\Main::get_instance();
